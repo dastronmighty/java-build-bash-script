@@ -6,4 +6,4 @@ echo "------git commit------"
 git commit -m "auto git"
 echo "------git push------"
 git push
-echo "autogit script ran"
+echo "------autogit script ran------"
