@@ -73,7 +73,7 @@ public class MoleculeSampleApp extends Application {
 
         final PhongMaterial redMaterial = new PhongMaterial();
         redMaterial.setDiffuseColor(Color.BLACK);
-        redMaterial.setSpecularColor(Color.RED);
+        redMaterial.setSpecularColor(Color.BISQUE);
 
         final PhongMaterial whiteMaterial = new PhongMaterial();
         whiteMaterial.setDiffuseColor(Color.ALICEBLUE);
@@ -102,6 +102,10 @@ public class MoleculeSampleApp extends Application {
         Xform hydrogen1Xform = new Xform();
         Xform hydrogen2SideXform = new Xform();
         Xform hydrogen2Xform = new Xform();
+        Xform hydrogen3SideXform = new Xform();
+        Xform hydrogen3Xform = new Xform();
+        Xform hydrogen4SideXform = new Xform();
+        Xform hydrogen4Xform = new Xform();
 
         Sphere oxygenSphere = new Sphere(20.0);
         oxygenSphere.setMaterial(redMaterial);
@@ -114,6 +118,14 @@ public class MoleculeSampleApp extends Application {
         hydrogen2Sphere.setMaterial(whiteMaterial);
         hydrogen2Sphere.setTranslateZ(0.0);
 
+        Sphere hydrogen3Sphere = new Sphere(12.0);
+        hydrogen3Sphere.setMaterial(whiteMaterial);
+        hydrogen3Sphere.setTranslateZ(0.0);
+
+        Sphere hydrogen4Sphere = new Sphere(12.0);
+        hydrogen4Sphere.setMaterial(whiteMaterial);
+        hydrogen4Sphere.setTranslateZ(0.0);
+
         Cylinder bond1Cylinder = new Cylinder(3, 30);
         bond1Cylinder.setMaterial(greyMaterial);
         bond1Cylinder.setTranslateX(20.0);
@@ -122,24 +134,53 @@ public class MoleculeSampleApp extends Application {
 
         Cylinder bond2Cylinder = new Cylinder(3, 30);
         bond2Cylinder.setMaterial(greyMaterial);
-        bond2Cylinder.setTranslateX(20.0);
+        bond2Cylinder.setTranslateX(20);
         bond2Cylinder.setRotationAxis(Rotate.Z_AXIS);
         bond2Cylinder.setRotate(90.0);
 
+        Cylinder bond3Cylinder = new Cylinder(3, 30);
+        bond3Cylinder.setMaterial(greyMaterial);
+        bond3Cylinder.setTranslateX(20);
+        bond3Cylinder.setRotationAxis(Rotate.Z_AXIS);
+        bond3Cylinder.setRotate(90.0);
+
+        Cylinder bond4Cylinder = new Cylinder(3, 30);
+        bond4Cylinder.setMaterial(greyMaterial);
+        bond4Cylinder.setTranslateX(20);
+        bond4Cylinder.setRotationAxis(Rotate.Z_AXIS);
+        bond4Cylinder.setRotate(90.0);
+
         moleculeXform.getChildren().add(oxygenXform);
+
         moleculeXform.getChildren().add(hydrogen1SideXform);
         moleculeXform.getChildren().add(hydrogen2SideXform);
+        moleculeXform.getChildren().add(hydrogen3SideXform);
+        moleculeXform.getChildren().add(hydrogen4SideXform);
+
         oxygenXform.getChildren().add(oxygenSphere);
+
         hydrogen1SideXform.getChildren().add(hydrogen1Xform);
         hydrogen2SideXform.getChildren().add(hydrogen2Xform);
+        hydrogen3SideXform.getChildren().add(hydrogen3Xform);
+        hydrogen4SideXform.getChildren().add(hydrogen4Xform);
+
         hydrogen1Xform.getChildren().add(hydrogen1Sphere);
         hydrogen2Xform.getChildren().add(hydrogen2Sphere);
+        hydrogen3Xform.getChildren().add(hydrogen3Sphere);
+        hydrogen4Xform.getChildren().add(hydrogen4Sphere);
+
         hydrogen1SideXform.getChildren().add(bond1Cylinder);
         hydrogen2SideXform.getChildren().add(bond2Cylinder);
+        hydrogen3SideXform.getChildren().add(bond3Cylinder);
+        hydrogen4SideXform.getChildren().add(bond4Cylinder);
 
         hydrogen1Xform.setTx(35.0);
         hydrogen2Xform.setTx(35.0);
-        hydrogen2SideXform.setRotateY(104.5);
+        hydrogen3Xform.setTx(35.0);
+        hydrogen4Xform.setTx(35.0);
+        hydrogen2SideXform.setRotateY(90);
+        hydrogen3SideXform.setRotateY(180);
+        hydrogen4SideXform.setRotateY(270);
 
         moleculeGroup.getChildren().add(moleculeXform);
 
