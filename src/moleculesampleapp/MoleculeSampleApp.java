@@ -72,7 +72,7 @@ public class MoleculeSampleApp extends Application {
     private void buildMolecule() {
 
         final PhongMaterial redMaterial = new PhongMaterial();
-        redMaterial.setDiffuseColor(Color.DARKRED);
+        redMaterial.setDiffuseColor(Color.BLACK);
         redMaterial.setSpecularColor(Color.RED);
 
         final PhongMaterial whiteMaterial = new PhongMaterial();
@@ -103,7 +103,7 @@ public class MoleculeSampleApp extends Application {
         Xform hydrogen2SideXform = new Xform();
         Xform hydrogen2Xform = new Xform();
 
-        Sphere oxygenSphere = new Sphere(15.0);
+        Sphere oxygenSphere = new Sphere(20.0);
         oxygenSphere.setMaterial(redMaterial);
 
         Sphere hydrogen1Sphere = new Sphere(12.0);
